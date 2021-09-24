@@ -11,26 +11,27 @@ firebase.initializeApp({
    appId: "1:741916154072:web:f941c4658d60395a7cdfad"
  });
 
-const authGoogle = document.querySelector('.auth-google');
-const authGithub = document.querySelector('.auth-github');
-const authFacebook = document.querySelector('.auth-facebook');
+const auth = document.querySelector('.auth');
+const singOut = document.querySelector('.sing-out');
+const update = document.querySelector('.update');
+const verification = document.querySelector('.verification');
+const deleteUser = document.querySelector('.delete');
+const isLoggedIn = document.querySelector('.is-logged-in > span');
 
-authGoogle.addEventListener('click', async () => {
-   const provider = new firebase.auth.GoogleAuthProvider();
-   const userData = await firebase.auth().signInWithPopup(provider)
+const email = 'xas@mail.ru';
+const password = '12345';
+
+auth.addEventListener('click', async () => {
+   await firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())
 });
 
 
-authGithub.addEventListener('click', async () => {
-   const provider = new firebase.auth.GithubAuthProvider();
-   const userData = await firebase.auth().signInWithPopup(provider)
-});
-
-authFacebook.addEventListener('click', async () => {
-   const provider = new firebase.auth.FacebookAuthProvider();
-   const userData = await firebase.auth().signInWithPopup(provider)
-});
 
 firebase.auth().onAuthStateChanged(user => {
-   console.log('USER___:', user);
+   if(user){
+      isLoggedIn.textContent = ' * ' + true;
+      console.log('USER___:', user);
+   } else {
+      isLoggedIn.textContent = ' * ' + false;
+   }
 })
