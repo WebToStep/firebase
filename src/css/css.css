@@ -1,0 +1,42 @@
+.post-header {
+    position: relative;
+}
+
+.list-questions-post {
+    position: absolute;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.list-questions-post li {
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.list-questions-post li:hover {
+    background-color: #e5ebf1
+}
+
+.list-questions-post li:nth-child(2n) {
+    border-top: 1px solid #f3f3f3;
+}
+
+.list-questions-post {
+    right: 5px;
+    top: 30px;
+    border: 1px solid #c5d0db;
+    box-shadow: 0 1px 3px #00000014;
+}
+
+.hide {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+}

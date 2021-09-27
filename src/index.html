@@ -1,24 +1,205 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Дистанция</title>
 </head>
 <body>
-<h1>firebase!!!!</h1>
-
-<button class="reg">reg</button>
-<button class="auth">auth</button>
-<button class="sing-out">sing-out</button>
-<button class="update">update</button>
-<button class="verification">verification</button>
-<button class="updatePassword">updatePassword</button>
-<button class="delete">delete</button>
-
-<div class="is-logged-in">is-logged-in<span></span></div>
-
+<header class="header">
+  <div class="header-block">
+    <button class="m-menu">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+    <div class="search">
+      <input type="text" class="search-input" placeholder="Search"/>
+    </div>
+    <div class="navigation">
+      <div class="user">
+        <img src="img/avatar.png" alt="avatar" class="user-avatar"/>
+        <span class="user-name">Mateusz</span>
+      </div>
+      <nav class="navigation-panel">
+        <a href="#" class="navigation-link">Home</a>
+        <a href="#" class="navigation-link">Create</a>
+      </nav>
+      <div class="icons-panel">
+        <a href="#" class="icon-link">
+          <svg width="20" height="20" class="header-icon">
+            <use xlink:href="img/icons.svg#users"></use>
+          </svg>
+        </a>
+        <a href="#" class="icon-link">
+          <span class="notification">9</span>
+          
+          <svg width="22" height="22" class="header-icon">
+            <use xlink:href="img/icons.svg#chat"></use>
+          </svg>
+        </a>
+        <a href="#" class="icon-link">
+          <span class="notification">8</span>
+          <svg width="16" height="22" class="header-icon">
+            <use xlink:href="img/icons.svg#bell"></use>
+          </svg>
+        </a>
+        <a href="#" class="icon-link">
+          <svg width="22" height="22" class="header-icon">
+            <use xlink:href="img/icons.svg#info"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="menu-sidebar">
+    <div class="user">
+      <img src="img/avatar.jpg" alt="avatar" class="user-avatar"/>
+      <span class="user-name">Mateusz Wierzbicki</span>
+    </div>
+    <!-- /.user -->
+    <nav class="nav-group">
+      <a href="#" class="nav-link active">
+        <svg width="24" height="24">
+          <use xlink:href="img/icons.svg#profile"></use>
+        </svg>
+        <span class="nav-text">News Feed</span>
+      </a>
+      <a href="#" class="nav-link">
+        <svg width="24" height="24">
+          <use xlink:href="img/icons.svg#chat-o"></use>
+        </svg>
+        <span class="nav-text">Messages</span>
+      </a>
+      <a href="#" class="nav-link">
+        <svg width="24" height="24">
+          <use xlink:href="img/icons.svg#marketplace"></use>
+        </svg>
+        <span class="nav-text">Marketplace</span>
+      </a>
+    </nav>
+    <nav class="nav-group">
+      <h3 class="nav-title">Shortcuts</h3>
+      <a href="#" class="nav-link">
+        <svg width="24" height="24">
+          <use xlink:href="img/icons.svg#trophy"></use>
+        </svg>
+        <span class="nav-text">Product Design</span>
+      </a>
+      <a href="#" class="nav-link">
+        <svg width="24" height="24">
+          <use xlink:href="img/icons.svg#trophy"></use>
+        </svg>
+        <span class="nav-text">UX & UI</span>
+      </a>
+      <a href="#" class="nav-link">
+        <svg width="24" height="24">
+          <use xlink:href="img/icons.svg#trophy"></use>
+        </svg>
+        <span class="nav-text">Figma</span>
+      </a>
+      <a href="#" class="nav-link">
+        <svg width="24" height="24">
+          <use xlink:href="img/icons.svg#trophy"></use>
+        </svg>
+        <span class="nav-text">Ant Design</span>
+      </a>
+      <button class="auth-google">
+        <svg width="24" height="24">
+          <use xlink:href="img/icons.svg#trophy"></use>
+        </svg>
+        <span class="nav-text">SignInGoogle</span>
+      </button>
+    </nav>
+  </div>
+  <!-- /.menu-sidebar -->
+  <div class="main-feed">
+    <div class="create-post">
+      <div class="create-post-header">
+        <h4 class="create-post-title">Create post</h4>
+      </div>
+      <!-- /.header -->
+      <div class="create-post-body">
+        <img src="img/avatar.jpg" alt="avatar" class="user-avatar"/>
+        <div class="create-post-input" contenteditable="true">
+          What’s on your mind, Mateusz?
+        </div>
+      </div>
+      <!-- /.body -->
+      <div class="create-post-footer">
+        <button class="tag">
+          <svg class="tag-icon" width="24" height="24">
+            <use xlink:href="img/icons.svg#image"></use>
+          </svg>
+          <span class="button-text">Photo/Video</span>
+        </button>
+        <button class="tag button-send hide">
+          <span class="button-text">Send</span>
+        </button>
+      </div>
+      <!-- /.footer -->
+    </div>
+    <!-- /.create-post -->
+    <div class="posts">
+      
+    </div>
+    <!-- /.posts -->
+  </div>
+  <!-- /.main-feed -->
+  <aside class="right-sidebar">
+    <div class="stories">
+      <div class="stories-header">
+        <h4 class="stories-title">Stories</h4>
+        <div class="story-buttons">
+          <a href="#" class="story-button-link">
+            <svg width="16" height="16" class="stories-icon">
+              <use xlink:href="img/icons.svg#clock-circle"></use>
+            </svg>
+            <span class="story-button-text">Archive</span>
+          </a>
+          <a href="#" class="story-button-link">
+            <span class="story-button-text">Settings</span>
+          </a>
+        </div>
+        <!-- /.story-buttons -->
+      </div>
+      <!-- /.story-header -->
+      <a href="#" class="story-item-add">
+        <div class="story-image">+</div>
+        <div class="story-item-text">
+              <span class="story-title">
+                Add to your story
+              </span>
+          <span class="story-text"
+          >Share a photo or video or write something</span
+          >
+        </div>
+      </a>
+      <!-- /.story-item-add -->
+      <a href="#" class="story-item">
+        <div class="story-image figma"></div>
+        <div class="story-item-text">
+              <span class="story-title">
+                Figma
+              </span>
+          <span class="story-text"> 4 hours ago</span>
+        </div>
+      </a>
+      <a href="#" class="story-item">
+        <div class="story-image figma"></div>
+        <div class="story-item-text">
+              <span class="story-title">
+                Figma
+              </span>
+          <span class="story-text"> 4 hours ago</span>
+        </div>
+      </a>
+    </div>
+    <!-- /.stries -->
+  </aside>
+  <!-- /.right-sidebar -->
+</div>
 </body>
 </html>
