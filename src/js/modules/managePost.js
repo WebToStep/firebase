@@ -1,22 +1,18 @@
 import firebase from "firebase/app";
-import 'firebase/database';
-import {outPost} from '../index'
+import 'firebase/firestore';
 
-const db = firebase.database();
+const db = firebase.firestore();
 
 export const managePost = () => {
    const showList = el => el.classList.toggle('hide');
    const hideList = el => el.classList.add('hide');
 
    const editPost = async (idPost, newText) => {
-      await db.ref(`posts/${idPost}`).update({textPost: newText});
-      outPost();
+      await db.collection('posts').doc(idPost).update({textPost: newText});
    }
 
    const deletedPost = async (idPost) => {
-      console.log('ku');
-      await db.ref(`posts/${idPost}`).remove();
-      outPost();
+      await db.collection('posts').doc(idPost).delete();
    }
 
    const startEditPost = (parentPost) => {

@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
-import 'firebase/database';
+import 'firebase/firestore';
 
-const db = firebase.database()
+const db = firebase.firestore()
 
 export const addPost = () =>{
    const createPostInput = document.querySelector('.create-post-input');
@@ -31,7 +31,7 @@ export const addPost = () =>{
                 textPost : createPostInput.textContent.trim(),
                 likeCount : 0,
                 postImage : "https://via.placeholder.com/1000",
-                timestamp : firebase.database.ServerValue.TIMESTAMP,
+                timestamp : firebase.firestore.Timestamp.now().seconds,
                 userAvatar : "https://via.placeholder.com/150",
                 userName : "Vlad",
                 uid: uid,
@@ -47,8 +47,8 @@ export const addPost = () =>{
                // var newPostsList = postsList.push();
                // newPostsList.set(postData);
 
-            const newPostKey = db.ref('posts').push().key
-            await db.ref(`posts/${newPostKey}`).set(postData)
+            const newPostId = db.collection('posts').doc().id
+            await db.collection('posts').doc(newPostId).set(postData)
             createPostInput.textContent = ''
             handleInput()
             blurInput()
