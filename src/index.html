@@ -17,10 +17,10 @@
       <input type="text" class="search-input" placeholder="Search"/>
     </div>
     <div class="navigation">
-      <div class="user">
+      <button class="user">
         <img src="img/avatar.png" alt="avatar" class="user-avatar"/>
-        <span class="user-name">Mateusz</span>
-      </div>
+        <span class="user-name">Sing in</span>
+      </button>
       <nav class="navigation-panel">
         <a href="#" class="navigation-link">Home</a>
         <a href="#" class="navigation-link">Create</a>
@@ -55,10 +55,10 @@
 </header>
 <div class="container">
   <div class="menu-sidebar">
-    <div class="user">
-      <img src="img/avatar.jpg" alt="avatar" class="user-avatar"/>
-      <span class="user-name">Mateusz Wierzbicki</span>
-    </div>
+    <button class="user">
+      <img src="img/avatar.png" alt="avatar" class="user-avatar"/>
+      <span class="user-name">Sing in</span>
+    </button>
     <!-- /.user -->
     <nav class="nav-group">
       <a href="#" class="nav-link active">
@@ -122,9 +122,9 @@
       </div>
       <!-- /.header -->
       <div class="create-post-body">
-        <img src="img/avatar.jpg" alt="avatar" class="user-avatar"/>
+        <img src="img/avatar.png" alt="avatar" class="user-avatar"/>
         <div class="create-post-input" contenteditable="true">
-          What’s on your mind, Mateusz?
+          What’s on your mind, <span class="user-name user-name__input"></span>?
         </div>
       </div>
       <!-- /.body -->
@@ -200,6 +200,13 @@
     <!-- /.stries -->
   </aside>
   <!-- /.right-sidebar -->
+</div>
+<div class="modal-user hide">
+  <button class="user-modal-close user">&#215;</button>
+  <div class="modal-user__content">
+    <h3 class="modal-user__title">Settings</h3>
+    <button class="modal-user__sign-out">Sign out</button>
+  </div>
 </div>
 </body>
 </html>

@@ -40,3 +40,52 @@
     display: flex;
     flex-direction: column;
 }
+
+.user {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.user-name__input{
+    color: #000000;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.modal-user{
+    background: #fff;
+    max-width: 600px;
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.user-modal-close{
+    display:block;
+    margin-left: auto;
+    background-color: #eb5353;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+.modal-user__content{
+    padding: 0 50px;
+
+}
+.modal-user__title{
+    text-align: center;
+}
+.modal-user__sign-out{
+    display:block;
+    background-color: #eb5353;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 30px;
+    margin-left: auto;
+    cursor: pointer;
+}

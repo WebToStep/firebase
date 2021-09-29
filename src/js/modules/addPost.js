@@ -26,7 +26,7 @@ export const addPost = () =>{
 
       if (defaultText !== createPostInput.textContent
          && createPostInput.textContent.trim() !== ''){
-            const uid = Date.now()
+            const uid = firebase.auth().currentUser.uid
             const postData = {
                 textPost : createPostInput.textContent.trim(),
                 likeCount : 0,
