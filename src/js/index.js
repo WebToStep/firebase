@@ -8,6 +8,7 @@ import './modules/menu';
 import {postNode} from './components/postNode';
 import {renderInDocument} from './utils';
 import {addPost} from './modules/addPost';
+import {managePost} from './modules/managePost';
 
 // styles import
 import '../css/normalize.css';
@@ -15,7 +16,7 @@ import '../css/style.css';
 import '../css/css.css';
 
 
-const outPost = () => {
+export const outPost = () => {
    // обновление постов
    const posts = document.querySelectorAll('.post');
    if(posts) {
@@ -23,8 +24,10 @@ const outPost = () => {
    }
    firebase.database()
       .ref('posts')
-      // сортировка по меткам
+      // сортировка по меткам(лайки, время итд)
       .orderByChild('timestamp')
+      // лимит на вывод первых строк из таблицы БД (например сейчас 2 поста) {так же есть лиминт на вывод последних итд}
+      .limitToFirst(5)
       .on('child_added', (post) => {
          const data = post.val();
          renderInDocument(postNode(post.key, data), '.posts');
@@ -48,3 +51,5 @@ const outPost = () => {
 outPost();
 addPost();
 singIn();
+managePost();
+

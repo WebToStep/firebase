@@ -41,7 +41,7 @@ export const addPost = () =>{
                    timestamp : "",
                 } ],
                }
-
+ 
                //  вариант записи в бд из документации 
                // var postsList = firebase.database().ref('posts');
                // var newPostsList = postsList.push();
